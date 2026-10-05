@@ -1,0 +1,190 @@
+.chat-list {
+  flex: 1;
+  min-height: 0;
+  margin-bottom: 8px;
+  overflow-y: auto;
+}
+.list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.hidden-toggle {
+  padding: 4px 6px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  background: transparent;
+  cursor: pointer;
+  font-size: var(--font-size-xs);
+}
+.hidden-toggle:hover {
+  color: var(--color-accent-hover);
+  background: var(--color-accent-soft);
+}
+.refresh-button {
+  border: 0;
+  color: var(--color-accent);
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+.refresh-button:hover:not(:disabled) {
+  color: var(--color-accent-hover);
+  transform: rotate(25deg);
+}
+.new-chat-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 7px;
+  margin: 14px 0 20px;
+  padding: 9px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+.new-chat-form select {
+  grid-column: 1 / -1;
+  padding: 6px 7px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  background: var(--color-surface-subtle);
+  font-size: var(--font-size-xs);
+}
+.new-chat-form input {
+  min-width: 0;
+  width: 100%;
+  padding: 8px 9px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  outline: none;
+  color: var(--color-text);
+  background: var(--color-surface-subtle);
+  font-size: var(--font-size-sm);
+}
+.new-chat-form input:focus {
+  border-color: var(--color-accent);
+  box-shadow: var(--focus-ring);
+}
+.new-chat-form button {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: #fff;
+  background: var(--color-accent);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  transition: background-color var(--transition-fast), opacity var(--transition-fast);
+}
+.new-chat-form button:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+}
+.new-chat-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.list-empty,
+.list-error {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.55;
+}
+.chat-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  margin: 5px 0;
+  padding: 9px 7px;
+  border: 0;
+  border-radius: var(--radius-md);
+  text-align: left;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+.chat-select {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  flex: 1;
+  padding: 0;
+  border: 0;
+  text-align: left;
+  background: transparent;
+  cursor: pointer;
+}
+.hide-chat {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 50%;
+  color: var(--color-text-faint);
+  background: transparent;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition-fast), background-color var(--transition-fast);
+}
+.chat-item:hover .hide-chat,
+.hide-chat:focus-visible {
+  opacity: 1;
+}
+.hide-chat:hover {
+  background: var(--color-border-subtle);
+}
+.chat-item:hover,
+.chat-item.selected {
+  background: var(--color-accent-soft);
+}
+.avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 31px;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  color: var(--color-accent-hover);
+  background: var(--color-accent-soft-strong);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+}
+.chat-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+.chat-meta strong,
+.chat-meta small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.chat-meta strong {
+  color: var(--color-text-strong);
+  font-size: var(--font-size-sm);
+}
+.chat-meta small {
+  color: var(--color-text-faint);
+  font-size: var(--font-size-xs);
+}
+.chat-item em {
+  margin-left: auto;
+  padding: 2px 5px;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--color-accent);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+}
